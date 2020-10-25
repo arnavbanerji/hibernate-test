@@ -4,6 +4,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name = "hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- dialect specifies the type of database used in hibernate so that hibernate generate appropriate type of SQL statements-->
         <property name = "hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name = "hibernate.connection.url">jdbc:mysql://localhost:3307/neon</property>
         <property name = "hibernate.connection.username">root</property>

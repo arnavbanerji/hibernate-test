@@ -24,3 +24,7 @@ Steps to create stand-alone hibernate project:
 2) Select maven as build type and archetype quickstart. proceed to select group ID and artefact ID and version.
 3) specify group ID - com.arnav
 4) specify artefact ID - Hib
+
+Difference between @Entity and @Table:
+Entity is used to name the model class.
+Table is used to name the Table name of the DB.

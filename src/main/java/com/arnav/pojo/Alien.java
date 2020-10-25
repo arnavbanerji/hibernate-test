@@ -1,4 +1,4 @@
-package com.arnav;
+package com.arnav.pojo;
 
 import javax.persistence.*;
 
@@ -37,6 +37,7 @@ public class Alien {
         this.color = color;
     }
 
+    //if you are not overriding toString(), by default it will get hash code of the object
     @Override
     public String toString() {
         return "Alien{" +

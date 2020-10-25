@@ -1,5 +1,6 @@
 package com.arnav;
 
+import com.arnav.pojo.Alien;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -7,15 +8,13 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-public class App 
+//main class to update values to database
+public class AddEmbededdableValuesToDatabase
 {
     public static void main( String[] args )
     {
         Alien arnav = new Alien();
-        arnav.setAlienID(101);
-        arnav.setAlienName("bonny");
-        arnav.setColor("GREEN");
-
+        //Alien arnav = null; you can also specify as it is only used to get the data
 
         Configuration con = new Configuration().configure().addAnnotatedClass(Alien.class);
         //no need to mention config xml file name in configure() as it is default
@@ -24,7 +23,9 @@ public class App
         SessionFactory sf = con.buildSessionFactory(reg);
         Session session = sf.openSession(); //create object of session for a particular logical transaction
         Transaction tx = session.beginTransaction();
-        session.save(arnav);
+
+        arnav = (Alien) session.get(Alien.class, 101); //second argument - specify primary key
+
         tx.commit();
     }
 }
